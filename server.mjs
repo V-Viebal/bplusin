@@ -11,7 +11,7 @@ const dataDir = process.env.DATA_DIR || path.join(root, '.local-content');
 const contentFile = path.join(dataDir, 'site-content.json');
 const authFile = path.join(dataDir, 'admin-auth.json');
 const port = Number(process.env.PORT || 3021);
-const furnitureOnRoot = process.env.BIN_FURNITURE_ROOT === '1';
+const furnitureOnRoot = process.env.BIN_FURNITURE_ROOT !== '0';
 const sessions = new Map();
 const secret = crypto.randomBytes(32);
 const tokenDigest = token => crypto.createHmac('sha256', secret).update(token).digest('hex');
